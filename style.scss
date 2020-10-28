@@ -24,6 +24,20 @@ $white: #fff;
      cursor: pointer;   
     }
 }
+@mixin image-responisve {
+    width: 50px;
+    height: 50px;
+    border: 3px solid $border;
+    border-radius: 10px;
+    box-shadow: -10px 23px 30px $icons;
+    transition: $transition;
+    &:hover{
+     transition: $transition;
+     transform: scale(1.2);
+     cursor: pointer;   
+    }
+}
+
 
 
 
@@ -31,6 +45,10 @@ $white: #fff;
 /****************
 basic styles
 ****************/
+html {
+	scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -55,10 +73,17 @@ a{
     display: flex;
     margin-left: 30px;
     padding: 20px 0;
+    @media(max-width: 768px){
+        display: block;
+        text-align: center;
+    }
     
     .nav-logo{
       font-weight: 700;
       color: $fontColor;
+         @media(max-width: 768px){
+               
+            }
         &:hover{
             color: $navBlue;
             transition: $transition;
@@ -74,6 +99,9 @@ a{
             .nav-link{
                 color: $navBlue;
                 font-weight: 500;
+                 @media(max-width: 768px){
+                   font-size: 0.9rem;
+            }
                 &:hover{
                    color: $icons;
                     transition: $transition;
@@ -86,6 +114,11 @@ a{
         height: 15px;
         width: 15px;
         margin-right: 10px;
+         @media(max-width: 768px){
+               height: 15px;
+               width: 15px;
+               margin-right: 5px;
+            }
     }
 }
 
@@ -95,6 +128,12 @@ a{
     width: auto;
     display: flex;
     justify-content: space-between;
+    @media(max-width: 768px){
+         height: auto;
+         width: auto;
+        display: flex;
+        flex-direction: column;
+    }
     .left{
         background-image: linear-gradient(rgba(54, 122, 198,.73), rgba(54, 122, 198,.73)), url(assets/NoPath%20-%20Copy.png);
         background-repeat: no-repeat;
@@ -104,8 +143,16 @@ a{
         display: flex;
         justify-content: center;
         align-items: center;
+        @media(max-width: 768px){
+            padding: 150px 0;
+            flex: 0 0 100%;
+        }
         h1{
             color: $white;
+            @media(max-width: 768px){
+                font-size: 1.5rem;
+                align-items: center;
+            }
           }
        }
     .right{
@@ -116,26 +163,49 @@ a{
         
         .col-up{
             display: flex;
+            @media(max-width: 768px){
+                display: flex;
+                flex-direction: column;
+            }
             .first img{
                 width: 98%;
                 height: 49vh;
                 margin: 0 0 0 10px;
+                @media(max-width: 768px){
+                     width: 100%;
+                    height: 50vh;
+                    margin: 5px 0px;
+                }
             }
             .second img{
                  width: 98%;
                  height: 49vh;
-                margin-left: 10px;
+                 margin-left: 10px;
+                 @media(max-width: 768px){
+                    width: 100%;
+                    height: 50vh;
+                    margin: 0px 0px 5px 0px;
+                }
             }
         }
-        .col-down img{
+        .col-down{
             flex: 0 0 50%;
             display: flex;
             align-items: flex-end;
+            @media(max-width: 768px){
+                align-items: center;
+            }
+            
           }
         img{
             margin: 0 0 0 10px;
             width: 99%;
             height: 50vh;
+             @media(max-width: 768px){
+                    width: 100%;
+                    height: 50vh;
+                    margin: 0;
+                }
         }
     }
     
@@ -144,6 +214,8 @@ a{
 
 .services{
     padding: 50px 0;
+    @media(max-width: 768px){
+    }
     .title h2{
         text-align: center;
         padding: 20px;
@@ -155,11 +227,24 @@ a{
         justify-content: space-evenly;
         margin-top: 20px;
         text-align: center;
+        @media(max-width: 768px){
+            display: flex;
+            flex-direction: column;
+        }
         .img-fluid{
         @include image;
+            @media(max-width: 768px){
+                width: 120px;
+                height: 120px;
+                border: 5px solid $border;
+            }
+            
         }
         h4{
             margin-top: 20px;
+            @media(max-width: 768px){
+                   margin: 20px 0px;
+            }
         }
     }
 }
