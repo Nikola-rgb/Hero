@@ -48,6 +48,13 @@ a {
   display: flex;
   margin-left: auto;
 }
+@media (max-width: 768px) {
+  .nav-bar ul {
+    display: flex;
+    margin-left: 0;
+    justify-content: center;
+  }
+}
 .nav-bar ul .nav-item {
   margin-right: 20px;
 }
@@ -71,9 +78,9 @@ a {
 }
 @media (max-width: 768px) {
   .nav-bar .social-holder a img {
-    height: 15px;
-    width: 15px;
-    margin-right: 5px;
+    height: 17px;
+    width: 17px;
+    margin-right: 10px;
   }
 }
 
